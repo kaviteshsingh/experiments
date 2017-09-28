@@ -1,0 +1,47 @@
+﻿<Page
+    x:Class="UWServer.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:UWServer"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="5*" />
+            <ColumnDefinition Width="5*" />
+        </Grid.ColumnDefinitions>
+        <Button x:Name="btDatagramServer" Content="Start DatagramSocket Server" HorizontalAlignment="Left" Grid.Row="0" Grid.Column="0" VerticalAlignment="Top" Width="234" Click="btDatagramServer_Click" Grid.ColumnSpan="2"/>
+
+        <TextBlock x:Name="tbPacketCount1" HorizontalAlignment="Left" Grid.Row="1" Grid.Column="0" TextWrapping="Wrap" Text="Packets Count" VerticalAlignment="Top" Width="136"/>
+        <TextBlock x:Name="tbPacketCountVal1" HorizontalAlignment="Left" Grid.Row="1" Grid.Column="1" TextWrapping="Wrap" Text="{Binding DgPackets, Mode=OneWay}" VerticalAlignment="Top" Height="20" Width="135"/>
+
+        <TextBlock x:Name="tbItemCount1" HorizontalAlignment="Left" Grid.Row="2" Grid.Column="0" TextWrapping="Wrap" Text="Items Count" VerticalAlignment="Top" Width="136"/>
+        <TextBlock x:Name="tbItemCountVal1" HorizontalAlignment="Left" Grid.Row="2" Grid.Column="1"  TextWrapping="Wrap" Text="{Binding DgPacketList.Count, Mode=OneWay}" VerticalAlignment="Top" Width="135"/>
+
+        <ListBox x:Name="lbDatagramItems1" Height="301" Grid.Row="3" Grid.Column="0"  VerticalAlignment="Top" ItemsSource="{Binding DgPacketList}" Grid.ColumnSpan="2"/>
+
+        <Button x:Name="btSocketServer" Content="Start Socket Server" HorizontalAlignment="Left" Grid.Row="4" Grid.Column="0" VerticalAlignment="Top" Width="234" Grid.ColumnSpan="2" Click="btSocketServer_Click"/>
+
+        <TextBlock x:Name="tbPacketCount2" HorizontalAlignment="Left" Grid.Row="5" Grid.Column="0" TextWrapping="Wrap" Text="Packets Count" VerticalAlignment="Top" Width="136"/>
+        <TextBlock x:Name="tbPacketCountVal2" HorizontalAlignment="Left" Grid.Row="5" Grid.Column="1" TextWrapping="Wrap" Text="{Binding SimpleSocketPackets, Mode=OneWay}" VerticalAlignment="Top" Height="20" Width="135"/>
+
+        <TextBlock x:Name="tbItemCount2" HorizontalAlignment="Left" Grid.Row="6" Grid.Column="0" TextWrapping="Wrap" Text="Items Count" VerticalAlignment="Top" Width="136"/>
+        <TextBlock x:Name="tbItemCountVal2" HorizontalAlignment="Left" Grid.Row="6" Grid.Column="1"  TextWrapping="Wrap" Text="{Binding SimpleSocketPacketList.Count, Mode=OneWay}" VerticalAlignment="Top" Width="135"/>
+
+        <ListBox x:Name="lbDatagramItems2" Height="301" Grid.Row="7" Grid.Column="0"  VerticalAlignment="Top" ItemsSource="{Binding SimpleSocketPacketList}" Grid.ColumnSpan="2"/>
+
+
+    </Grid>
+</Page>
